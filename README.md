@@ -20,6 +20,7 @@ AI副業初心者向けの無料診断サイトです。
 公開前の確認は [docs/PUBLISH_CHECKLIST.md](docs/PUBLISH_CHECKLIST.md) を使ってください。
 公開URLやCTA本番URLを設定するときは [docs/URL_SETUP_GUIDE.md](docs/URL_SETUP_GUIDE.md) を使ってください。
 Git管理を始める前は [docs/GIT_START_CHECKLIST.md](docs/GIT_START_CHECKLIST.md) を確認してください。
+リモートリポジトリへ接続するときは [docs/REMOTE_REPO_GUIDE.md](docs/REMOTE_REPO_GUIDE.md) を確認してください。
 
 ## 診断タイプ
 

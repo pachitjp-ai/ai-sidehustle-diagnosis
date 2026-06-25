@@ -136,6 +136,7 @@ build/testは並列実行せず、この順番で実行してください。
 
 Git管理を始める場合は [GIT_START_CHECKLIST.md](GIT_START_CHECKLIST.md) を確認します。
 Codexはユーザーから明示的に依頼されるまで、`git init` やコミット作成は行いません。
+リモートリポジトリへ接続する場合は [REMOTE_REPO_GUIDE.md](REMOTE_REPO_GUIDE.md) を確認します。
 
 ## Codexが自動で進めてよい条件
 
