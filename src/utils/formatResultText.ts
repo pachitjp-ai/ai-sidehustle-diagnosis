@@ -1,0 +1,62 @@
+import type { ResultContent, Scores } from '../types';
+import { shareContent } from '../data/share';
+
+const scoreLabels: Record<keyof Scores, string> = {
+  writing: '文章',
+  creative: '画像/制作',
+  tool: 'ツール開発',
+  research: 'リサーチ',
+};
+
+function formatList(items: string[]): string {
+  return items.map((item) => `- ${item}`).join('\n');
+}
+
+function formatNumberedList(items: string[]): string {
+  return items.map((item, index) => `${index + 1}. ${item}`).join('\n');
+}
+
+export function formatResultText(result: ResultContent, scores: Scores): string {
+  const scoreText = Object.entries(scores)
+    .map(([key, value]) => `- ${scoreLabels[key as keyof Scores]}: ${value}`)
+    .join('\n');
+
+  const lines = [
+    `【${shareContent.siteName}】`,
+    '',
+    `診断結果: ${result.title}`,
+    '',
+    '一言でいうと',
+    result.tagline,
+    '',
+    'スコア',
+    scoreText,
+    '',
+    'あなたの強み',
+    formatList(result.strengths),
+    '',
+    '注意すべき弱み',
+    formatList(result.weaknesses),
+    '',
+    '向いているAI副業',
+    formatList(result.suited),
+    '',
+    '向いていないAI副業',
+    formatList(result.unsuited),
+    '',
+    '最初の3ステップ',
+    formatNumberedList(result.firstSteps),
+    '',
+    '7日間ロードマップ',
+    formatList(result.roadmap7Days),
+    '',
+    'まず使うAIツール',
+    formatList(result.aiTools),
+  ];
+
+  if (shareContent.siteUrl) {
+    lines.push('', '診断サイト', shareContent.siteUrl);
+  }
+
+  return lines.join('\n');
+}

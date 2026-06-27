@@ -5,6 +5,7 @@ import { results } from '../data/results';
 import { ctas } from '../data/cta';
 import { roadmaps } from '../data/roadmaps';
 import { buildShareUrl, shareContent } from '../data/share';
+import { formatResultText } from './formatResultText';
 import type { ResultType } from '../types';
 
 const resultTypes: ResultType[] = ['writing', 'creative', 'tool', 'research'];
@@ -112,5 +113,20 @@ describe('calculate result', () => {
     expect(url).toContain('https://twitter.com/intent/tweet?');
     expect(decodeURIComponent(url)).toContain(results.writing.title);
     expect(decodeURIComponent(url)).toContain(shareContent.hashtags[0]);
+  });
+
+  it('formats result text for copy and note drafts', () => {
+    const text = formatResultText(results.writing, {
+      writing: 12,
+      creative: 3,
+      tool: 5,
+      research: 7,
+    });
+
+    expect(text).toContain('【現実派AI副業診断】');
+    expect(text).toContain(`診断結果: ${results.writing.title}`);
+    expect(text).toContain('最初の3ステップ');
+    expect(text).toContain('7日間ロードマップ');
+    expect(text).toContain(shareContent.siteUrl);
   });
 });

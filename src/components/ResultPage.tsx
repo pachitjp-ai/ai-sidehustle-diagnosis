@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import type { ResultContent, Scores } from '../types';
 import { ctas } from '../data/cta';
 import { roadmaps } from '../data/roadmaps';
 import { buildShareUrl } from '../data/share';
+import { formatResultText } from '../utils/formatResultText';
 
 type Props = {
   result: ResultContent;
@@ -17,12 +19,23 @@ const labelMap: Record<keyof Scores, string> = {
 };
 
 export function ResultPage({ result, scores, onRestart }: Props) {
+  const [copyStatus, setCopyStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const shareUrl = buildShareUrl(result);
   const cta = ctas[result.type];
   const roadmap = roadmaps[result.type];
   const handleCtaClick = () => {
     if (cta.url) {
       window.location.href = cta.url;
+    }
+  };
+  const handleCopyResult = async () => {
+    const text = formatResultText(result, scores);
+
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopyStatus('success');
+    } catch {
+      setCopyStatus('error');
     }
   };
 
@@ -80,9 +93,12 @@ export function ResultPage({ result, scores, onRestart }: Props) {
       </section>
 
       <div className="resultActions">
+        <button className="secondaryButton" onClick={handleCopyResult}>結果をコピー</button>
         <a className="shareButton" href={shareUrl} target="_blank" rel="noreferrer">Xでシェア</a>
         <button className="ghostButton" onClick={onRestart}>もう一度診断する</button>
       </div>
+      {copyStatus === 'success' && <p className="copyStatus">結果をコピーしました。noteやメモに貼り付けできます。</p>}
+      {copyStatus === 'error' && <p className="copyStatus error">コピーできませんでした。ブラウザの権限を確認してください。</p>}
     </main>
   );
 }
