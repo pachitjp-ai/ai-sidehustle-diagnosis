@@ -53,6 +53,7 @@ h1, h2, p, li, button, a, summary { overflow-wrap: anywhere; }
 .infoSection, .promptBox, .ctaBox, .roadmapPreview { padding: 22px; margin: 14px 0; }
 .infoSection ul, .infoSection ol { margin: 0; padding-left: 22px; line-height: 1.8; color: #374151; }
 .infoSection li + li { margin-top: 6px; }
+.goalSection p { margin: 0; color: #374151; line-height: 1.8; }
 .roadmapPreview p { color: #374151; line-height: 1.8; margin: 0 0 16px; }
 .roadmapPhaseList { display: grid; gap: 10px; }
 .roadmapPhase { box-shadow: none; padding: 0; overflow: hidden; }
@@ -69,6 +70,9 @@ h1, h2, p, li, button, a, summary { overflow-wrap: anywhere; }
 .ctaBox { background: linear-gradient(135deg, #eff6ff, #ffffff); }
 .ctaBox p { color: #374151; line-height: 1.8; }
 .ctaBox .ctaStatus { margin: 12px 0 16px; padding: 12px 14px; border-radius: 14px; background: #fff; border: 1px solid #dbeafe; color: #1f2937; }
+.ctaPromptList { display: grid; gap: 10px; margin: 16px 0; }
+.ctaPromptList p { margin: 0; padding: 12px 14px; border-radius: 14px; background: #fff; border: 1px solid #dbeafe; }
+.ctaPromptList strong { display: block; margin-bottom: 4px; color: #1d4ed8; }
 .resultActions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
 .shareButton { background: #111827; box-shadow: none; }
 .secondaryButton { background: #0f766e; box-shadow: none; }

@@ -70,7 +70,11 @@ describe('calculate result', () => {
       expect(result.suited.length).toBeGreaterThan(0);
       expect(result.unsuited.length).toBeGreaterThan(0);
       expect(result.firstSteps.length).toBe(3);
+      expect(result.monetizationRoute.length).toBeGreaterThan(0);
+      expect(result.firstProductIdeas.length).toBeGreaterThan(0);
       expect(result.roadmap7Days).toHaveLength(7);
+      expect(result.goalAfter30Days).toBeTruthy();
+      expect(result.cautions.length).toBeGreaterThan(0);
       expect(result.aiTools.length).toBeGreaterThan(0);
     });
   });
@@ -85,6 +89,8 @@ describe('calculate result', () => {
       expect(cta.buttonLabel).toBeTruthy();
       expect(cta.pendingLabel).toBeTruthy();
       expect(cta.pendingMessage).toBeTruthy();
+      expect(cta.notePrompt).toBeTruthy();
+      expect(cta.xPrompt).toBeTruthy();
     });
   });
 
@@ -126,7 +132,11 @@ describe('calculate result', () => {
     expect(text).toContain('【現実派AI副業診断】');
     expect(text).toContain(`診断結果: ${results.writing.title}`);
     expect(text).toContain('最初の3ステップ');
+    expect(text).toContain('収益化ルート');
+    expect(text).toContain('最初の商品案');
     expect(text).toContain('7日間ロードマップ');
+    expect(text).toContain('30日後の目標');
+    expect(text).toContain('注意点');
     expect(text).toContain(shareContent.siteUrl);
   });
 });

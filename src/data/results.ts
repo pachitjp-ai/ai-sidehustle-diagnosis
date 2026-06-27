@@ -31,6 +31,16 @@ export const results: Record<ResultContent['type'], ResultContent> = {
       'その人の悩みを20個出し、AIで投稿案に変える。',
       '投稿を10本作り、1つを500〜980円のテンプレ案にする。',
     ],
+    monetizationRoute: [
+      'Xやnoteで無料投稿を出し、読者の悩みを確かめる',
+      '反応があったテーマをチェックリストやテンプレにする',
+      'まず500〜980円で1件売る。その後、改善版を積み上げる',
+    ],
+    firstProductIdeas: [
+      'X投稿10本テンプレ',
+      'AI副業を始める前のチェックリスト',
+      'note記事の見出しテンプレ',
+    ],
     roadmap7Days: [
       'Day1: 過去の自分や友人など、書きやすい相手を1人選ぶ',
       'Day2: その人が困りそうなことを10個だけメモする',
@@ -39,6 +49,12 @@ export const results: Record<ResultContent['type'], ResultContent> = {
       'Day5: 有料部分に入れるチェックリストやテンプレを作る',
       'Day6: タイトル、目次、販売説明文を整える',
       'Day7: 制作ログをXに投稿し、改善点を1つ決める',
+    ],
+    goalAfter30Days: '投稿10本、note下書き1本、500〜980円の小さなテンプレ案1つを公開できる状態にする',
+    cautions: [
+      'AIの文章をそのまま出さず、自分の経験や判断を足す',
+      '高額販売より、まず1件売れる小さな商品を作る',
+      '医療・法律・投資など確認が重いテーマは避ける',
     ],
     aiTools: ['ChatGPT', 'Claude', 'Googleドキュメント', 'Canva'],
   },
@@ -72,6 +88,16 @@ export const results: Record<ResultContent['type'], ResultContent> = {
       'AIで30案を出し、似た案を削って10案に絞る。',
       '3案だけ商品ページ風に整え、SNSで反応を見る。',
     ],
+    monetizationRoute: [
+      'SNSで作例を見せ、保存や反応があるデザインを探す',
+      '反応がある案だけテンプレや素材セットにする',
+      'まず低価格の素材セットで1件販売を目指す',
+    ],
+    firstProductIdeas: [
+      'Instagram投稿テンプレ3枚セット',
+      'Canvaで編集できるバナー素材',
+      '画像生成プロンプトと作例セット',
+    ],
     roadmap7Days: [
       'Day1: カフェ、美容室、勉強アカウントなど身近なジャンルを1つ選ぶ',
       'Day2: そのジャンルで使えそうな場面を3つ書く',
@@ -80,6 +106,12 @@ export const results: Record<ResultContent['type'], ResultContent> = {
       'Day5: 商品名と説明文を3案作る',
       'Day6: SNS投稿用の見せ方を作る',
       'Day7: 反応があった案だけ販売候補に残す',
+    ],
+    goalAfter30Days: '販売候補のデザイン3案、SNS投稿3本、低価格で出せる素材セット1つを作る',
+    cautions: [
+      '既存キャラクターやブランドに似せたデザインは避ける',
+      '在庫や広告費を先にかけず、反応を見てから増やす',
+      '好みだけで作らず、誰がどこで使うかを決める',
     ],
     aiTools: ['Canva', 'ChatGPT', 'Adobe Firefly', 'Midjourney'],
   },
@@ -113,6 +145,16 @@ export const results: Record<ResultContent['type'], ResultContent> = {
       '入力、結果、次の行動の3画面だけを書き出す。',
       'CodexやノーコードでMVPを作り、3人に触ってもらう。',
     ],
+    monetizationRoute: [
+      '無料ツールで使ってもらい、困りごとを集める',
+      '結果ページにテンプレ、相談、noteなどの自然な導線を置く',
+      'まず無料公開で反応を見て、小さな有料テンプレへつなげる',
+    ],
+    firstProductIdeas: [
+      '診断結果別の行動テンプレ',
+      'スプレッドシート自動化テンプレ',
+      '小さな比較・計算ツール',
+    ],
     roadmap7Days: [
       'Day1: 自分や友人が少し面倒に感じることを1つ選ぶ',
       'Day2: 入力、結果、次の行動を1行ずつメモする',
@@ -121,6 +163,12 @@ export const results: Record<ResultContent['type'], ResultContent> = {
       'Day5: スマホで触って崩れや誤字を直す',
       'Day6: 結果ページに仮CTAを置く',
       'Day7: 制作ログを投稿し、改善点を3つ聞く',
+    ],
+    goalAfter30Days: '1機能だけのMVPを公開し、3人以上に触ってもらい、改善点を集める',
+    cautions: [
+      '最初から多機能にせず、1つの悩みだけ解く',
+      '個人情報や決済を扱う機能は後回しにする',
+      '作って終わりにせず、触った人の反応を必ず見る',
     ],
     aiTools: ['Codex', 'ChatGPT', 'Googleスプレッドシート', 'Vite'],
   },
@@ -154,6 +202,16 @@ export const results: Record<ResultContent['type'], ResultContent> = {
       '比較軸を5つ作る。料金、用途、難しさ、注意点、向いている人。',
       '3つのツールを比較し、X投稿5本と短い記事1本にする。',
     ],
+    monetizationRoute: [
+      '無料の比較投稿や記事で読者の関心を確かめる',
+      '反応があるテーマを比較表やチェックリストにする',
+      'まず低価格noteや関連サービス紹介で小さな収益を目指す',
+    ],
+    firstProductIdeas: [
+      'AIツール比較表',
+      '初心者向けツール選びチェックリスト',
+      '週1回のAI副業ニュースまとめ',
+    ],
     roadmap7Days: [
       'Day1: 自分も知りたいAIツールや副業テーマを1つ選ぶ',
       'Day2: 候補を3つだけ集め、料金と使い道をメモする',
@@ -162,6 +220,12 @@ export const results: Record<ResultContent['type'], ResultContent> = {
       'Day5: 比較表と短い記事を作る',
       'Day6: 記事からX投稿を5本作る',
       'Day7: 反応を見て、次に調べるテーマを決める',
+    ],
+    goalAfter30Days: '比較表1本、短い記事1本、X投稿5本を公開し、次に調べるテーマを決める',
+    cautions: [
+      'AI検索だけで断定せず、公式情報や一次情報も見る',
+      '稼げる話を煽らず、向き不向きと注意点も書く',
+      '調べるだけで止まらず、短くても公開する',
     ],
     aiTools: ['Perplexity', 'ChatGPT', 'Notion', 'Googleスプレッドシート'],
   },

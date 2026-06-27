@@ -62,7 +62,14 @@ export function ResultPage({ result, scores, onRestart }: Props) {
       <InfoSection title="向いているAI副業" items={result.suited} />
       <InfoSection title="向いていないAI副業" items={result.unsuited} />
       <InfoSection title="最初の3ステップ" items={result.firstSteps} ordered />
+      <InfoSection title="収益化ルート" items={result.monetizationRoute} ordered />
+      <InfoSection title="最初の商品案" items={result.firstProductIdeas} />
       <InfoSection title="7日間ロードマップ" items={result.roadmap7Days} />
+      <section className="infoSection goalSection">
+        <h2>30日後の目標</h2>
+        <p>{result.goalAfter30Days}</p>
+      </section>
+      <InfoSection title="注意点" items={result.cautions} />
       <InfoSection title="まず使うAIツール" items={result.aiTools} />
 
       <section className="roadmapPreview">
@@ -86,6 +93,10 @@ export function ResultPage({ result, scores, onRestart }: Props) {
       <section className="ctaBox" aria-label="CTAセクション">
         <h2>{cta.title}</h2>
         <p>{cta.description}</p>
+        <div className="ctaPromptList">
+          <p><strong>noteに書くなら</strong>{cta.notePrompt}</p>
+          <p><strong>Xで共有するなら</strong>{cta.xPrompt}</p>
+        </div>
         {!cta.url && <p className="ctaStatus">{cta.pendingMessage}</p>}
         <button className="primaryButton" disabled={!cta.url} onClick={handleCtaClick}>
           {cta.url ? cta.buttonLabel : cta.pendingLabel}

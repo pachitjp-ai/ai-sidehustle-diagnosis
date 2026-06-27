@@ -24,7 +24,11 @@ export type ResultContent = {
   suited: string[];
   unsuited: string[];
   firstSteps: string[];
+  monetizationRoute: string[];
+  firstProductIdeas: string[];
   roadmap7Days: string[];
+  goalAfter30Days: string;
+  cautions: string[];
   aiTools: string[];
 };
 
@@ -34,6 +38,8 @@ export type CtaContent = {
   buttonLabel: string;
   pendingLabel: string;
   pendingMessage: string;
+  notePrompt: string;
+  xPrompt: string;
   url?: string;
 };
 
