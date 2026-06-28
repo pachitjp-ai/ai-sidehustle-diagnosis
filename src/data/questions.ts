@@ -97,7 +97,7 @@ export const questions: Question[] = [
     title: '最初の目標に一番近いものはどれですか？',
     subtitle: '大きく稼ぐより、まず月1万円に近づく前提で選んでください。',
     options: [
-      { label: '文章やテンプレで小さく売りたい', description: 'noteやXから始めたい', scores: { writing: 3, research: 2 } },
+      { label: '文章やひな形で小さく売りたい', description: 'noteやXから始めたい', scores: { writing: 3, research: 2 } },
       { label: '販売できる画像素材や商品を作りたい', description: 'PODやデザイン素材を試したい', scores: { creative: 4 } },
       { label: '無料ツールや診断サイトを作りたい', description: 'あとで収益導線を置ける資産を作りたい', scores: { tool: 4 } },
       { label: '調査や比較を発信して信頼を作りたい', description: 'まとめ記事やニュースレターを育てたい', scores: { research: 3, writing: 2 } },

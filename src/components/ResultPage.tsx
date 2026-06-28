@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { ResultContent, Scores } from '../types';
 import { ctas } from '../data/cta';
+import { glossaryItems } from '../data/glossary';
 import { roadmaps } from '../data/roadmaps';
 import { buildShareUrl } from '../data/share';
 import { formatResultText } from '../utils/formatResultText';
@@ -67,9 +68,9 @@ export function ResultPage({ result, scores, onRestart }: Props) {
       <InfoSection title="最初の3ステップ" items={result.firstSteps} ordered />
       <InfoSection title="向いている稼ぎ方" items={result.suited} collapsible defaultOpen />
       <InfoSection title="向いていない稼ぎ方" items={result.unsuited} collapsible />
-      <InfoSection title="収益化ルート" items={result.monetizationRoute} ordered />
+      <InfoSection title="お金につなげる流れ" items={result.monetizationRoute} ordered />
       <InfoSection title="最初の商品案" items={result.firstProductIdeas} collapsible />
-      <InfoSection title="7日間ロードマップ" items={result.roadmap7Days} collapsible defaultOpen />
+      <InfoSection title="7日間の行動計画" items={result.roadmap7Days} collapsible defaultOpen />
       <section className="infoSection goalSection">
         <h2>30日後の目標</h2>
         <p>{result.goalAfter30Days}</p>
@@ -78,10 +79,11 @@ export function ResultPage({ result, scores, onRestart }: Props) {
       <InfoSection title="注意すべき弱み" items={result.weaknesses} collapsible />
       <InfoSection title="注意点" items={result.cautions} collapsible />
       <InfoSection title="まず使うAIツール" items={result.aiTools} />
-      <InfoSection title="ツールの課金判断" items={result.toolGuidance} collapsible />
+      <InfoSection title="ツールにお金をかけるかの目安" items={result.toolGuidance} collapsible />
+      <GlossarySection />
 
       <section className="roadmapPreview">
-        <h2>30日ロードマップの中身</h2>
+        <h2>30日間の行動計画</h2>
         <p>{roadmap.goal}</p>
         <div className="roadmapPhaseList">
           {roadmap.phases.map((phase, index) => (
@@ -98,7 +100,7 @@ export function ResultPage({ result, scores, onRestart }: Props) {
         </div>
       </section>
 
-      <section className="ctaBox" aria-label="CTAセクション">
+      <section className="ctaBox" aria-label="診断後にできること">
         <h2>{cta.title}</h2>
         <p>{cta.description}</p>
         <div className="ctaPromptList">
@@ -122,6 +124,24 @@ export function ResultPage({ result, scores, onRestart }: Props) {
       {copyStatus === 'success' && <p className="copyStatus">結果をコピーしました。noteやメモに貼り付けできます。</p>}
       {copyStatus === 'error' && <p className="copyStatus error">コピーできませんでした。ブラウザの権限を確認してください。</p>}
     </main>
+  );
+}
+
+function GlossarySection() {
+  return (
+    <details className="infoSection collapsibleSection glossarySection">
+      <summary>
+        <h2>用語ミニ補足</h2>
+      </summary>
+      <dl className="glossaryList">
+        {glossaryItems.map((item) => (
+          <div key={item.term} className="glossaryItem">
+            <dt>{item.term}</dt>
+            <dd>{item.description}</dd>
+          </div>
+        ))}
+      </dl>
+    </details>
   );
 }
 

@@ -4,6 +4,7 @@ import { questions } from '../data/questions';
 import { results } from '../data/results';
 import { ctas } from '../data/cta';
 import { roadmaps } from '../data/roadmaps';
+import { glossaryItems } from '../data/glossary';
 import { buildShareUrl, shareContent } from '../data/share';
 import { formatResultText } from './formatResultText';
 import type { ResultType } from '../types';
@@ -81,7 +82,7 @@ describe('calculate result', () => {
     });
   });
 
-  it('has editable CTA content for every result type', () => {
+  it('has editable next-action content for every result type', () => {
     expect(Object.keys(ctas).sort()).toEqual([...resultTypes].sort());
 
     resultTypes.forEach((type) => {
@@ -112,6 +113,26 @@ describe('calculate result', () => {
     });
   });
 
+  it('keeps beginner glossary content available', () => {
+    const terms = glossaryItems.map((item) => item.term);
+    expect(terms).toEqual([
+      'X投稿',
+      'note',
+      'チェックリスト',
+      'ひな形',
+      '収益化',
+      '無料配布',
+      '低価格商品',
+      'PR表記',
+      'アフィリエイト',
+      '試作品',
+    ]);
+
+    glossaryItems.forEach((item) => {
+      expect(item.description).toBeTruthy();
+    });
+  });
+
   it('builds editable X share URLs', () => {
     expect(shareContent.siteName).toBeTruthy();
     expect(shareContent.messageTemplate).toContain('{resultTitle}');
@@ -134,12 +155,12 @@ describe('calculate result', () => {
     expect(text).toContain('【現実派AI副業診断】');
     expect(text).toContain(`診断結果: ${results.writing.title}`);
     expect(text).toContain('最初の3ステップ');
-    expect(text).toContain('収益化ルート');
+    expect(text).toContain('お金につなげる流れ');
     expect(text).toContain('最初の商品案');
-    expect(text).toContain('7日間ロードマップ');
+    expect(text).toContain('7日間の行動計画');
     expect(text).toContain('30日後の目標');
     expect(text).toContain('注意点');
-    expect(text).toContain('ツールの課金判断');
+    expect(text).toContain('ツールにお金をかけるかの目安');
     expect(text).toContain(shareContent.siteUrl);
   });
 });

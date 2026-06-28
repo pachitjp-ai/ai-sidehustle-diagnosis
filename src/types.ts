@@ -63,3 +63,8 @@ export type ShareContent = {
   hashtags: string[];
   siteUrl?: string;
 };
+
+export type GlossaryItem = {
+  term: string;
+  description: string;
+};

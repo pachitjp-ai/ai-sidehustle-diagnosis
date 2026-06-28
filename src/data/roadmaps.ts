@@ -63,7 +63,7 @@ export const roadmaps: Record<ResultType, RoadmapContent> = {
   },
   tool: {
     type: 'tool',
-    goal: '1機能だけのMVPを公開し、3人に触ってもらい、改善点を3つ集める',
+    goal: '1機能だけの試作品を公開し、3人に触ってもらい、改善点を3つ集める',
     phases: [
       {
         period: '1週目',
@@ -76,13 +76,13 @@ export const roadmaps: Record<ResultType, RoadmapContent> = {
       },
       {
         period: '2週目',
-        title: 'MVPを作る',
+        title: 'まず動く試作品を作る',
         actions: ['Codexに仕様を渡す', '動く画面を作る', 'スマホで表示確認する'],
       },
       {
         period: '3週目',
         title: '結果と次の行動を整える',
-        actions: ['結果文を短くする', '次に読むnoteやチェックリストへの仮CTAを置く', '最低限のテストや手動確認メモを作る'],
+        actions: ['結果文を短くする', '次に読むnoteやチェックリストへの仮の案内文を置く', '最低限のテストや手動確認メモを作る'],
       },
       {
         period: '4週目',
