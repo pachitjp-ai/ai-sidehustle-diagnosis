@@ -82,6 +82,18 @@ describe('calculate result', () => {
     });
   });
 
+  it('keeps Day2 roadmap actions clear for beginners', () => {
+    resultTypes.forEach((type) => {
+      const day2 = results[type].roadmap7Days[1];
+      expect(day2).toContain('Day2:');
+      expect(day2).not.toContain('入力するもの、表示する結果、次にやることを1行ずつメモする');
+    });
+
+    expect(results.tool.firstSteps[1]).toContain('相手に答えてもらうこと');
+    expect(results.tool.roadmap7Days[1]).toContain('結果を見た人が次にすること');
+    expect(results.research.roadmap7Days[1]).toContain('次に何を試せばいいか');
+  });
+
   it('has editable next-action content for every result type', () => {
     expect(Object.keys(ctas).sort()).toEqual([...resultTypes].sort());
 
